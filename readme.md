@@ -32,7 +32,7 @@ aString;
 pointToThatString;
 // => ???
 ```
-> But this code run in Ruby does the same thing...
+> AM: Is this the best example to show that we don't need to worry about memory allocation the same way we do in Ruby?
 
 In Ruby, there are situations like these that don't play out the same way. Today we'll learn about how Ruby memory allocation may have unintended consequences. We'll also learn about immutable data types such as Symbols that are not subject to changes.
 
@@ -90,6 +90,28 @@ b.upcase!
 a
 # => "CHEESEBURGER"
 ```
+
+#### Garbage Collection
+
+What happens to a value in memory when it is no longer being pointed at by a variable?
+
+```rb
+a = 10
+b = a
+
+a # => 10
+b # => 10
+
+a = 20
+b # => 10
+
+b = 30
+b # => 30
+```
+> AM: Make sure to whiteboard this out. Code snippet not enough.
+
+What happened to the memory location that stored `10` at the start of the above code snippet? **Garbage Collection.**
+* Because nothing is pointing to that memory location, Ruby clears it up for later use.
 
 #### Reassignment...  
 <a href="https://imgflip.com/gif/t984f"><img src="https://i.imgflip.com/t984f.gif" title="made at imgflip.com"/></a>
