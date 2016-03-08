@@ -121,8 +121,6 @@ What happened to the memory location that stored `10` at the start of the above 
 #### ...vs Replacement
 <a href="https://imgflip.com/gif/t98b3"><img src="https://i.imgflip.com/t98b3.gif" title="made at imgflip.com"/></a>
 
-> AM: Include code example that demonstrates garbage collection.
-
 #### Exercise: Variable Assignment (15min)
 
 [Exercise: Variable Assignment](https://gist.github.com/amaseda/35a62128d8795e045d49)
