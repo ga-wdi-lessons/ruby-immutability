@@ -199,6 +199,7 @@ light_switch_kitchen.object_id
 light_switch_bathroom.object_id
 # => 2053788
 ```
+> Note that all three variables reference the same location in memory.
 
 This is important because we are trying to represent the **concepts** of `on` and `off`, not the strings. Symbols are a useful way of doing this.
 
