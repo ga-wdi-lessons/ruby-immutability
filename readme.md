@@ -6,6 +6,36 @@
 
 ### Framing
 
+In Javascript, we don't have to worry about our actions having unintended consequences in memory. Take the following example...
+
+```js
+var aString = "hello world";
+
+var pointToThatString = aString;
+// Here we might expect that `pointToThatString` will point to the same location in memory that `aString` is pointing too.
+
+aString;
+// => "hello world"
+
+pointToThatString;
+// => "hello world"
+```
+
+So both variables print the same value to the console.
+* What happens if we modify the value that is stored in `aString`. Will that then change what is stored in `pointToThatString`?
+
+```js
+aString = aString.toUpperCase();
+aString;
+// => "HELLO WORLD"
+
+pointToThatString;
+// => ???
+```
+> But this code run in Ruby does the same thing...
+
+In Ruby, there are situations like these that don't play out the same way. Today we'll learn about how Ruby memory allocation may have unintended consequences. We'll also learn about immutable data types such as Symbols that are not subject to changes.
+
 ### Variables and Mutability (15min)
 
 Let's talk about variables and memory allocation in Ruby.
@@ -38,7 +68,7 @@ We can use the `.object_id` method to demonstrate that two variables are pointin
 
 #### Bang! (The `!`)
 
-All of the Ruby data types we have discussed so far are  data types in Ruby are mutable.
+All of the Ruby data types we have discussed so far -- with the exception of numbers -- are data types in Ruby are mutable.
 * We can not only change what values in memory variables are pointing to, but we can change those values in memory as well.
 
 Methods with an `!` attached to the end of them usually means that they will modify the object they are calling on.
@@ -60,6 +90,7 @@ a
 
 #### Reassignment...  
 <a href="https://imgflip.com/gif/t984f"><img src="https://i.imgflip.com/t984f.gif" title="made at imgflip.com"/></a>
+
 #### ...vs Replacement
 <a href="https://imgflip.com/gif/t98b3"><img src="https://i.imgflip.com/t98b3.gif" title="made at imgflip.com"/></a>
 
@@ -75,7 +106,7 @@ a
 Symbols are immutable values. That means they contain the same value through the entirety of a program and cannot be changed.
 * Kind of like a string that never changes.
 * Syntax: `variable_name = :symbol_name`
-* No Javascript equivalent.
+* No Javascript equivalent (that is, [until ES6 came along](https://hacks.mozilla.org/2015/06/es6-in-depth-symbols/)).
 
 ```rb
 favorite_animal = :dog
@@ -105,10 +136,31 @@ favorite_animal = :dog
 # => :dog
 ```
 
-When/why would you use symbols?
-* Make sure values that need to be constant stay constant.
-* Enhance performance. Use less memory.
-* Often used as keys in hashes. More on that later this class.
+#### When/Why Would You Use Symbols?
+
+Enhance performance. Use less memory.  
+
+Make sure values that need to be constant stay constant.  
+
+Often used as keys in hashes.  
+* Imagine you're creating hashes to represent every instructor that works for GA. They would something like this...  
+
+```rb
+jesse = {
+  name: "Jesse Shawl",
+  location: "DC",
+  cohort: "WDI8"
+}
+
+jeff = {
+  name: "Jeff Horn",
+  location: "Boston",
+  cohort: "WDI5"
+}
+```
+
+We know the keys for each of these hashes will be the exact same. So rather than instantiate these keys as strings and devote a location in memory to each of them -- which could end up totaling in the hundreds! -- why not just use symbols?  
+* If each instructor has the same three keys, we only need three memory locations to store them.
 
 ### Further Reading
 
