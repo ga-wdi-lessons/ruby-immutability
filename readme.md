@@ -6,7 +6,7 @@
 
 > AM: Add more detailed learning objectives.
 
-### Framing
+### Framing (5 minutes / 0:05)
 
 In Javascript, we don't have to worry about our actions having unintended consequences in memory. Take the following example...
 
@@ -38,7 +38,7 @@ pointToThatString;
 
 In Ruby, there are situations like these that don't play out the same way. Today we'll learn about how Ruby memory allocation may have unintended consequences. We'll also learn about immutable data types such as Symbols that are not subject to changes.
 
-### Variables and Mutability (15min)
+### Variables and Mutability (15 minutes / 0:20)
 
 Let's talk about variables and memory allocation in Ruby.
 
@@ -121,14 +121,14 @@ What happened to the memory location that stored `10` at the start of the above 
 #### ...vs Replacement
 <a href="https://imgflip.com/gif/t98b3"><img src="https://i.imgflip.com/t98b3.gif" title="made at imgflip.com"/></a>
 
-#### Exercise: Variable Assignment (15min)
+#### Exercise: Variable Assignment (15 minutes / 0:45)
 
 [Exercise: Variable Assignment](https://gist.github.com/amaseda/35a62128d8795e045d49)
 * Work in pairs and answer the questions in the link above.
 * **NO CODING ALLOWED!** Stretch those brain muscles and talk these out with your partner.
 * Writing these out on your table/whiteboard with markers is strongly encouraged.
 
-### Symbols and (Im)mutability (5min)
+### Symbols and (Im)mutability (10 minutes / 0:55)
 
 Symbols are immutable values. That means they contain the same value through the entirety of a program and cannot be changed.
 * Kind of like a string that never changes.
@@ -254,4 +254,7 @@ We know the keys for each of these hashes will be the exact same. So rather than
 
 ### Further Reading
 
-* [Tying Ruby Immutability to Functional Programming](http://valve.github.io/blog/2014/07/04/from-object-to-functional-immutability/)
+* [Freezing String Literals and Constants in Ruby](http://josephyi.com/freeze/)
+* [From Ruby Immutability to Functional Programming](http://valve.github.io/blog/2014/07/04/from-object-to-functional-immutability/)
+
+> AM: Add summary of what is/isn't immutable in both JS and Ruby.
