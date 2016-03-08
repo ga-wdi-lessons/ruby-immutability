@@ -4,7 +4,7 @@
 * Use `!` to modify values in memory.
 * Demonstrate how symbols are immutable data types in Ruby.
 
-> AM: Add more details learning objectives.
+> AM: Add more detailed learning objectives.
 
 ### Framing
 
