@@ -250,6 +250,8 @@ jeff = {
 We know the keys for each of these hashes will be the exact same. So rather than instantiate these keys as strings and devote a location in memory to each of them -- which could end up totaling in the hundreds! -- why not just use symbols?  
 * If each instructor has the same three keys, we only need three memory locations to store them.
 
+> AM: Is there a worthwhile exercise to include that would test their knowledge of symbols?
+
 ### Further Reading
 
 * [Tying Ruby Immutability to Functional Programming](http://valve.github.io/blog/2014/07/04/from-object-to-functional-immutability/)
