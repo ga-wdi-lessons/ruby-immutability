@@ -4,6 +4,8 @@
 * Use `!` to modify values in memory.
 * Demonstrate how symbols are immutable data types in Ruby.
 
+> AM: Add more details learning objectives.
+
 ### Framing
 
 In Javascript, we don't have to worry about our actions having unintended consequences in memory. Take the following example...
