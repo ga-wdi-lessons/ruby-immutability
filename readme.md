@@ -5,8 +5,6 @@
 * Identify the use cases for Symbols in Ruby.
 * Compare data (im)mutability in Javascript and Ruby.
 
-> AM: Add more detailed learning objectives.
-
 ### Framing (5 minutes / 0:05)
 
 In Javascript, we don't have to worry about our actions having unintended consequences in memory. Take the following example...
@@ -35,7 +33,6 @@ aString;
 pointToThatString;
 // => ???
 ```
-> AM: Is this the best example to show that we don't need to worry about memory allocation the same way we do in Ruby?
 
 In Ruby, there are situations like these that don't play out the same way. Today we'll learn about how Ruby memory allocation may have unintended consequences. We'll also learn about immutable data types such as Symbols that are not subject to changes.
 
@@ -74,7 +71,7 @@ b.object_id
 
 #### The Bang Symbol (`!`)
 
-All of the Ruby data types we have discussed so far -- with the exception of numbers -- are mutable.
+All of the Ruby data types we have discussed so far -- with the exception of symbols and numbers -- are mutable.
 * We can not only change what variables are pointing to in memory, but we can directly modify those values stored in memory as well.
 
 Methods with an `!` attached to the end of them usually mean that they will modify the value in memory they are being called on.
@@ -157,6 +154,7 @@ favorite_animal.to_s
 
 favorite_animal = :dog
 # => :dog
+# Calling `.to_s` on `favorite_animal` does not convert the original value. It's still a symbol.
 ```
 
 #### When/Why Would You Use Symbols?
@@ -246,12 +244,8 @@ jeff = {
 We know the keys for each of these hashes will be the exact same. So rather than instantiate these keys as strings and devote a location in memory to each of them -- which could end up totaling in the hundreds! -- why not just use symbols?  
 * If each instructor has the same three keys, we only need three memory locations to store them.
 
-> AM: Include exercise to test Symbol understanding?
-
 ### Further Reading
 
 * [Freezing String Literals and Constants in Ruby](http://josephyi.com/freeze/)
 * [Unraveling String Key Performance in Ruby](http://www.sitepoint.com/unraveling-string-key-performance-ruby-2-2/)
 * [From Ruby Immutability to Functional Programming](http://valve.github.io/blog/2014/07/04/from-object-to-functional-immutability/)
-
-> AM: Add summary of what is/isn't immutable in both JS and Ruby.
