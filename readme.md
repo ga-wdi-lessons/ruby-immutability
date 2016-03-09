@@ -5,7 +5,6 @@
 * Demonstrate how variables are stored in and removed from memory using Ruby.
 * Use `!` to modify values in memory.
 * Identify the use cases for Symbols in Ruby.
-* Compare data (im)mutability in Javascript and Ruby.
 
 ### Framing (5 minutes / 0:05)
 
@@ -36,7 +35,7 @@ b;
 // => ???
 ```
 
-If we ran the Ruby equivalent of this code, it would actually have the same result. But there are certain situation in Ruby in which memory allocation may have unintended consequences. We'll also learn about immutable data types such as Symbols that are not subject to changes.
+If we ran the Ruby equivalent of this code, it would actually have the same result. But there are other similar scenarios in Ruby in which memory allocation may have unintended consequences. We'll also learn about immutable data types such as Symbols that are not subject to changes.
 
 ### Variables and Mutability (15 minutes / 0:20)
 
@@ -121,7 +120,7 @@ b = "nachos"
 b # => "nachos"
 ```
 
-What happened to the memory location that stored `10` at the start of the above code snippet? **Garbage Collection.**
+What happened to the memory location that stored `"cheeseburger"` at the start of the above code snippet? **Garbage Collection.**
 * Because nothing is pointing to that memory location, Ruby clears it up for later use.
 
 #### Reassignment...  
