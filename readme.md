@@ -129,14 +129,14 @@ What happened to the memory location that stored `"cheeseburger"` at the start o
 #### ...vs Replacement
 <a href="https://imgflip.com/gif/t98b3"><img src="https://i.imgflip.com/t98b3.gif" title="made at imgflip.com"/></a>
 
-### Exercise: Variable Assignment (15 minutes / 0:45)
+### Exercise: Variable Assignment (15 minutes / 0:35)
 
 [Exercise: Variable Assignment](https://gist.github.com/amaseda/35a62128d8795e045d49)
 * Work in pairs and answer the questions in the link above.
 * **NO CODING ALLOWED!** Stretch those brain muscles and talk these out with your partner.
 * Writing these out on your table/whiteboard with markers is strongly encouraged.
 
-### Symbols and (Im)mutability (10 minutes / 0:55)
+### Symbols and (Im)mutability (10 minutes / 0:45)
 
 Symbols are immutable values. That means they contain the same value through the entirety of a program and cannot be changed.
 * Kind of like a string that never changes.
@@ -254,6 +254,8 @@ jeff = {
 
 We know the keys for each of these hashes will be the exact same. So rather than instantiate these keys as strings and devote a location in memory to each of them -- which could end up totaling in the hundreds! -- why not just use symbols?  
 * If each instructor has the same three keys, we only need three memory locations to store them.
+
+### Closing / Questions (5 minutes / 0:50)
 
 ### Further Reading
 
