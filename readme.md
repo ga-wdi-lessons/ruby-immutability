@@ -14,7 +14,7 @@ In Javascript, we don't have to worry about our actions having unintended conseq
 ```js
 var a = "hello world";
 
-var b = aString;
+var b = a;
 // Here we might expect that `pointToThatString` will point to the same location in memory that `aString` is pointing too.
 
 a;
@@ -25,7 +25,7 @@ b;
 ```
 
 So both variables print the same value to the console.
-* What happens if we modify the value that is stored in `aString`. Will that then change what is stored in `pointToThatString`?
+* What happens if we modify the value that is stored in `a`. Will that then change what is stored in `b`?
 
 ```js
 a = a.toUpperCase();
@@ -36,7 +36,7 @@ b;
 // => ???
 ```
 
-In Ruby, there are situations like these that don't play out the same way. Today we'll learn about how Ruby memory allocation may have unintended consequences. We'll also learn about immutable data types such as Symbols that are not subject to changes.
+If we ran the Ruby equivalent of this code, it would actually have the same result. But there are certain situation in Ruby in which memory allocation may have unintended consequences. We'll also learn about immutable data types such as Symbols that are not subject to changes.
 
 ### Variables and Mutability (15 minutes / 0:20)
 
@@ -108,17 +108,17 @@ a
 What happens to a value in memory when it is no longer being pointed at by a variable?
 
 ```rb
-a = 10
+a = "cheeseburger"
 b = a
 
-a # => 10
-b # => 10
+a # => "cheeseburger"
+b # => "cheeseburger"
 
-a = 20
-b # => 10
+a = "hot dog"
+b # => "cheeseburger"
 
-b = 30
-b # => 30
+b = "nachos"
+b # => "nachos"
 ```
 
 What happened to the memory location that stored `10` at the start of the above code snippet? **Garbage Collection.**
