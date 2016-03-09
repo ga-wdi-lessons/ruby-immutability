@@ -12,15 +12,15 @@
 In Javascript, we don't have to worry about our actions having unintended consequences in memory. Take the following example...
 
 ```js
-var aString = "hello world";
+var a = "hello world";
 
-var pointToThatString = aString;
+var b = aString;
 // Here we might expect that `pointToThatString` will point to the same location in memory that `aString` is pointing too.
 
-aString;
+a;
 // => "hello world"
 
-pointToThatString;
+b;
 // => "hello world"
 ```
 
@@ -28,11 +28,11 @@ So both variables print the same value to the console.
 * What happens if we modify the value that is stored in `aString`. Will that then change what is stored in `pointToThatString`?
 
 ```js
-aString = aString.toUpperCase();
-aString;
+a = a.toUpperCase();
+a;
 // => "HELLO WORLD"
 
-pointToThatString;
+b;
 // => ???
 ```
 
